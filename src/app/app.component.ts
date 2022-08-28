@@ -9,7 +9,7 @@ import {Currency} from "./models/currency";
 })
 export class AppComponent implements OnInit {
   baseValue = 0;
-  baseCurrency = 'USD';
+  baseCurrency = 'TRY';
   convertedValue = 0;
   convertCurrency = 'EUR';
   currencies: Currency[];
@@ -32,7 +32,7 @@ export class AppComponent implements OnInit {
   convert() {
     if (this.baseCurrency === 'TRY'){
       this.convertedValue = this.baseValue * this.currencies.find(x => x.code === this.convertCurrency).buying;
-    }else if (this.baseCurrency === 'USD'){
+    }else{
       this.convertedValue = this.baseValue * this.currencies.find(x => x.code === this.convertCurrency).usdRate;
     }
 
